@@ -39,6 +39,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
   .controller('SoundCtrl', function($scope,$ionicPlatform,$state, $ionicLoading, $ionicPopup,$timeout, $http, $q) {
     //console.log = function() {};
+    this.JUMP_LENGTH = 3;
     var PAGE_WAIT_TIME = 1000;
     $scope.initialized = false;
     $scope.dontTriggerEndCallback = false;
@@ -420,7 +421,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
             maxWidth: 200,
             showDelay: 0
           });
-          while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * 3))
+          while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * this.JUMP_LENGTH))
           || (($scope.index < sents.length && $scope.index >=0)&&(sayAll.match(/\S+/g)||[]).length < 10))
           {
             console.log($(page.textLayer.textDivs[$scope.index]));
@@ -542,7 +543,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
             maxWidth: 200,
             showDelay: 0
           });
-          while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * 3))
+          while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * this.JUMP_LENGTH))
           || (($scope.index < sents.length && $scope.index >=0)&&(sayAll.match(/\S+/g)||[]).length < 10))
           {
             console.log($(page.textLayer.textDivs[$scope.index]));
@@ -661,7 +662,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
           maxWidth: 200,
           showDelay: 0
         });
-        while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * 3))
+        while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * this.JUMP_LENGTH))
         || (($scope.index < sents.length && $scope.index >=0)&&(sayAll.match(/\S+/g)||[]).length < 10))
         {
           console.log($(page.textLayer.textDivs[$scope.index]));
@@ -765,7 +766,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
         showDelay: 0
       });
       var sayBackwards = "";
-      while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * 3))
+      while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * this.JUMP_LENGTH))
       || (($scope.index < sents.length && $scope.index >=0)&&(sayBackwards.match(/\S+/g)||[]).length < 10))
       {
         console.log($(page.textLayer.textDivs[$scope.index]));
@@ -857,7 +858,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
           showDelay: 0
         });
         var sayBackwards = "";
-        while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * 3))
+        while((($scope.index < sents.length && $scope.index >=0)&&(Math.abs(sents[$scope.index].transform[5] - targetPosition) < sents[$scope.index].height * this.JUMP_LENGTH))
         || (($scope.index < sents.length && $scope.index >=0)&&(sayBackwards.match(/\S+/g)||[]).length < 10))
         {
           console.log($(page.textLayer.textDivs[$scope.index]));
